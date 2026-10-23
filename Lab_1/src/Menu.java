@@ -7,7 +7,6 @@ import drink.Espresso;
 import drink.Latte;
 import drink.Mocha;
 
-// Single Responsibility: Menu only knows which drinks the shop sells.
 public class Menu {
     private List<Drink> drinks = new ArrayList<>();
 
