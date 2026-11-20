@@ -10,7 +10,7 @@
 
 **MAXIM ORMANJI FAF-242**
 
-Checked by: Reițman Petricia
+Checked by: Istrati Daniel
 
 Chișinău, 2026
 
