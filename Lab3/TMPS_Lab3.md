@@ -99,19 +99,21 @@ The project is organised in the packages `drink`, `drink.extra`, `order`, `payme
 
 The class structure of the three patterns is shown in three UML class diagrams.
 
-![Figure 2.1 – Class diagram of Decorator](decorator.png)
+<img width="962" height="715" alt="lab3_decorator drawio" src="https://github.com/user-attachments/assets/7b2a6e31-65cc-4818-aa97-2abbce013049" />
+
 
 *Figure 2.1 – Class diagram of the Decorator pattern*
 
 Figure 2.1 shows the part of the system that uses the **Decorator** pattern. The interface `OrderItem` declares `getDescription()` and `getPrice()`. It is implemented by the abstract class `Drink` (the component that is decorated) and by the abstract decorator `DrinkExtra`. `DrinkExtra` keeps a reference to another `OrderItem` (the aggregation `drink`) and by default passes both calls to it. The concrete decorators `Syrup` and `Cinnamon` extend `DrinkExtra` and add their own text and price on top of the result of the wrapped object. The note at the bottom shows that the extras can be wrapped in any order.
 
-![Figure 2.2 – Class diagram of Composite](composite.png)
+<img width="939" height="496" alt="lab3_decorator drawio (1)" src="https://github.com/user-attachments/assets/94346589-0e0e-4eac-8e43-f865b0887140" />
 
 *Figure 2.2 – Class diagram of the Composite pattern*
 
 Figure 2.2 shows the part of the system that uses the **Composite** pattern. `OrderItem` is the common component. `Drink` is the leaf: a single drink. `CoffeeCombo` is the composite: it holds two `OrderItem` objects (the aggregation `items`, multiplicity 2) and also implements `OrderItem`. The class `Order` is the client: it keeps a list of `OrderItem` objects (0..*) and does not need to know whether an item is a single drink or a combo. The note at `CoffeeCombo` shows how the price is calculated: the sum of the prices of the items minus `DISCOUNT`.
 
-![Figure 2.3 – Class diagram of Facade](facade.png)
+<img width="1262" height="800" alt="lab3_decorator drawio (2)" src="https://github.com/user-attachments/assets/589eab07-161e-451c-ad3f-d49898159de4" />
+
 
 *Figure 2.3 – Class diagram of the Facade pattern*
 
