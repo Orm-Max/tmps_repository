@@ -102,19 +102,22 @@ The project is organised in the packages `command`, `discount`, `drink`, `drink.
 
 The class structure of the three patterns is shown in three UML class diagrams.
 
-![Figure 2.1 – Class diagram of Command](command.png)
+<img width="1292" height="463" alt="lab4_command drawio" src="https://github.com/user-attachments/assets/f99ab45a-65c0-4392-9af6-61005e87f009" />
+
 
 *Figure 2.1 – Class diagram of the Command pattern*
 
 Figure 2.1 shows the part of the system that uses the **Command** pattern. The interface `OrderCommand` declares `execute()` and `undo()`. It is implemented by the concrete command `AddItemCommand`, which keeps the receiver (`Order`) and the item that must be added. The invoker `OrderHistory` aggregates the commands in a stack (`Deque`) and offers the methods `execute(command)` and `undo()`. The client `Main` creates the command (dashed arrow «create») and gives it to the history. The note at `AddItemCommand` shows that `execute()` calls `order.addItem(item)` and `undo()` calls `order.removeLastItem()`.
 
-![Figure 2.2 – Class diagram of Observer](observer.png)
+<img width="1362" height="404" alt="lab4_observer drawio" src="https://github.com/user-attachments/assets/1972ffc0-7655-426d-8d0f-f7f69be75c1c" />
+
 
 *Figure 2.2 – Class diagram of the Observer pattern*
 
 Figure 2.2 shows the part of the system that uses the **Observer** pattern. `Order` is the subject: it keeps a list of listeners (0..\*) and has the methods `subscribe()` and `unsubscribe()`. The private method `notifyListeners()` calls `itemChanged()` of every listener. The interface `OrderListener` is implemented by two concrete observers: `ItemChangeMessage` prints the item with the word "added." or "removed.", and `CartSummary` prints the number of items and the subtotal of the order. Both observers receive the order as a parameter and read its state (dashed arrows «use»). The note at the bottom of the diagram shows how `Main` subscribes the observers.
 
-![Figure 2.3 – Class diagram of Strategy](strategy.png)
+<img width="1242" height="386" alt="lab4_strategy drawio" src="https://github.com/user-attachments/assets/8e31206b-f852-4bcb-aacb-947d4abd006c" />
+
 
 *Figure 2.3 – Class diagram of the Strategy pattern*
 
